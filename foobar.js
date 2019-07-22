@@ -9,8 +9,7 @@
  */
 let inputString = process.argv[2] || 'hello  world     test';
 
-/**
- * Log the modified string.
- * Uses RegEx
- */
-console.log(inputString.replace(/\s\s+/g, ' '));
+let modifiedString = inputString.split(' ').filter((item) => {
+  return !item ? undefined : item
+}).join(' ')
+console.log(modifiedString);
